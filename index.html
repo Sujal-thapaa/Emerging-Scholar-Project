@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Wastage Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <a href="index.html" aria-label="Homepage">
+                <img src="food.png" alt="Food Wastage Management Logo" class="logo">
+            </a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Enter Data</a>
+                        <ul class="dropdown-content">
+                            <li><a href="data_entry_per_hours.html">Per Hour</a></li>
+                            <li><a href="data_entry.html">Per Day</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="statistics.html">View Statistics</a></li>
+                    <li><a href="food_menu.html">Food Menu</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle Navigation Menu">&#9776;</button>
+        </nav>
+
+        <div class="textbox">
+            <h1>Welcome to the Food Wastage Management System</h1>
+            <p>Join us in reducing food wastage by tracking data each day. Use our tools to monitor and analyze food waste, aiming for a sustainable future. Every entry brings us closer to conserving resources.</p>
+            <h2>Ready to make a change?</h2>
+            <a href="about.html" class="hero-btn">Learn More About Us</a>
+        </div>
+    </header>
+
+    <script>
+        // Toggle navigation menu for mobile
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

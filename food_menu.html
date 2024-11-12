@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu - Nutritional Optimization Engine</title>
+    <link rel="stylesheet" href="style_n.css">
+</head>
+<body>
+
+    <section class="display-section">
+        <h2>Food Nutrition Display</h2>
+        <div id="foodDisplay" class="food-display"></div>
+        <a href="food_engin.html" class="add-more-link">Add More Food</a>
+    </section>
+
+    <script>
+        function displayFoodItems() {
+            const foodItems = JSON.parse(localStorage.getItem('foodItems')) || [];
+            const foodDisplay = document.getElementById('foodDisplay');
+
+            foodDisplay.innerHTML = ''; // Clear previous items
+            if (foodItems.length === 0) {
+                foodDisplay.innerHTML = '<p class="no-data">No food items to display. Click "Add More Food" to get started.</p>';
+                return;
+            }
+
+            // Display each food item
+            foodItems.forEach(food => {
+                const foodCard = document.createElement('div');
+                foodCard.classList.add('food-card');
+                foodCard.innerHTML = `
+                    <h3>${food.foodName}</h3>
+                    <p><strong>Calories:</strong> ${food.calories} kcal</p>
+                    <p><strong>Protein:</strong> ${food.protein} g</p>
+                    <p><strong>Sugar:</strong> ${food.sugar} g</p>
+                    <p><strong>Other Nutrients:</strong> ${food.otherNutrients}</p>
+                `;
+                foodDisplay.appendChild(foodCard);
+            });
+        }
+
+        window.onload = displayFoodItems;
+    </script>
+
+</body>
+</html>

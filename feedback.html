@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Feedback System</title>
+    <link rel="stylesheet" href="style_f.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Meal Feedback System</h1>
+        <form id="feedback-form">
+            <label for="meal-name">Meal Name:</label>
+            <input type="text" id="meal-name" name="meal-name" placeholder="e.g., Grilled Chicken" required>
+
+            <label for="rating">Rate Your Meal:</label>
+            <select id="rating" name="rating" required>
+                <option value="">Select...</option>
+                <option value="1">1 - Very Dissatisfied</option>
+                <option value="2">2 - Dissatisfied</option>
+                <option value="3">3 - Neutral</option>
+                <option value="4">4 - Satisfied</option>
+                <option value="5">5 - Very Satisfied</option>
+            </select>
+
+            <label for="portion-size">Portion Size Feedback:</label>
+            <textarea id="portion-size" name="portion-size" rows="3" placeholder="Was the portion size adequate?"></textarea>
+
+            <label for="food-quality">Food Quality Feedback:</label>
+            <textarea id="food-quality" name="food-quality" rows="3" placeholder="How was the quality of the food?"></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+        
+        <button class="back-button" onclick="window.location.href='index.html'">Back</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

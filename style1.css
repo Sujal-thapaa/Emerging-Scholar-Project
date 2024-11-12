@@ -1,0 +1,113 @@
+/* Reset and base styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #1e1e2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Header styling */
+.header {
+    width: 100%;
+    padding: 20px;
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    max-width: 900px;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.header:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-size: 2.8em;
+    color: #ffe0e6;
+    margin-bottom: 12px;
+    animation: fadeIn 1.5s ease;
+}
+
+p {
+    font-size: 1.2em;
+    color: #f2f2f2;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    animation: fadeIn 1.5s ease 0.5s;
+}
+
+/* Chart styling */
+.chart {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    animation: slideUp 1.5s ease;
+    background-color: #2a2d3b;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .chart {
+        width: 90%;
+        max-width: 100%;
+    }
+}
+
+/* Tooltip custom styling */
+.google-visualization-tooltip {
+    background: rgba(51, 51, 51, 0.9);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Additional interactivity */
+.chart:hover {
+    box-shadow: 0 8px 20px rgba(255, 126, 95, 0.5);
+}
+
+a, a:visited {
+    color: #ffd1c4;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #ff8a65;
+}

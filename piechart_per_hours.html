@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Wastage per Hour</title>
+    <link rel="stylesheet" href="style1.css">
+
+    <!-- Load the Google Charts library -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Initialize the chart -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            // Retrieve data from localStorage or use default values
+            const data = google.visualization.arrayToDataTable([
+                ['Time', 'Food Wastage per Hour (g)', { role: 'tooltip', type: 'string', p: { html: true } }],
+                ['7:00 AM', parseInt(localStorage.getItem('07:00 am') || 0), '07:00 am: ' + (localStorage.getItem('7:00 AM') || 0) + ' g'],
+                ['8:00 AM', parseInt(localStorage.getItem('8:00 am') || 0), '8:00 am: ' + (localStorage.getItem('8:00 am') || 0) + ' g'],
+                ['9:00 AM', parseInt(localStorage.getItem('9:00 am') || 0), '9:00 am: ' + (localStorage.getItem('9:00 am') || 0) + ' g'],
+                ['10:00 AM', parseInt(localStorage.getItem('10:00 am') || 0), '10:00 am: ' + (localStorage.getItem('10:00 am') || 0) + ' g'],
+                ['11:00 AM', parseInt(localStorage.getItem('11:00 am') || 0), '11:00 am: ' + (localStorage.getItem('11:00 am') || 0) + ' g'],
+                ['12:00 PM', parseInt(localStorage.getItem('12:00 pm') || 0), '12:00 pm: ' + (localStorage.getItem('12:00 pm') || 0) + ' g'],
+                ['1:00 PM', parseInt(localStorage.getItem('01:00 pm') || 0), '01:00 pm: ' + (localStorage.getItem('01:00 pm') || 0) + ' g'],
+                ['2:00 PM', parseInt(localStorage.getItem('02:00 pm') || 0), '02:00 pm: ' + (localStorage.getItem('02:00 pm') || 0) + ' g'],
+                ['3:00 PM', parseInt(localStorage.getItem('03:00 pm') || 0), '03:00 pm: ' + (localStorage.getItem('03:00 pm') || 0) + ' g'],
+                ['4:00 PM', parseInt(localStorage.getItem('04:00 pm') || 0), '04:00 pm: ' + (localStorage.getItem('04:00 pm') || 0) + ' g'],
+                ['5:00 PM', parseInt(localStorage.getItem('05:00 pm') || 0), '05:00 pm: ' + (localStorage.getItem('05:00 pm') || 0) + ' g'],
+                ['6:00 PM', parseInt(localStorage.getItem('06:00 pm') || 0), '06:00 pm: ' + (localStorage.getItem('06:00 pm') || 0) + ' g'],
+                ['7:00 PM', parseInt(localStorage.getItem('07:00 pm') || 0), '07:00 pm: ' + (localStorage.getItem('07:00 pm') || 0) + ' g'],
+                ['8:00 PM', parseInt(localStorage.getItem('08:00 pm') || 0), '08:00 pm: ' + (localStorage.getItem('08:00 pm') || 0) + ' g']
+            ]);
+
+            const options = {
+                title: 'Food Wastage per Hour (g)',
+                pieSliceText: 'value', // Show the actual values on the slices
+                legend: { position: 'bottom' },
+                tooltip: { isHtml: true }, // Enable custom HTML tooltips
+                pieHole: 0.4, // For a donut-style chart
+                colors: ['#8ad1c2', '#9bcfb3', '#acdba7', '#bddaa0', '#cdd994', '#ddd88a', '#eedc7b', '#fed36d', '#ffbe58', '#ffab47', '#f29539', '#de7f2e', '#d16326', '#b44d1d']
+            };
+
+            const chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+</head>
+
+<body>
+    <section class="header">
+        <h2>Food Wastage per Hour</h2>
+        <div id="piechart" style="width: 100%; max-width: 900px; height: 500px;"></div>
+    </section>
+</body>
+</html>

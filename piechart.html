@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pie Chart</title>
+    <link rel="stylesheet" href="style1.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            const data = google.visualization.arrayToDataTable([
+                ['Day', 'Food Wastage per Day (lbs)', { role: 'tooltip', type: 'string', p: { html: true } }],
+                ['Sunday', parseInt(localStorage.getItem('sunday') || 110), 'Sunday: ' + (localStorage.getItem('sunday') || 110) + ' lbs'],
+                ['Monday', parseInt(localStorage.getItem('monday') || 20), 'Monday: ' + (localStorage.getItem('monday') || 20) + ' lbs'],
+                ['Tuesday', parseInt(localStorage.getItem('tuesday') || 40), 'Tuesday: ' + (localStorage.getItem('tuesday') || 40) + ' lbs'],
+                ['Wednesday', parseInt(localStorage.getItem('wednesday') || 25), 'Wednesday: ' + (localStorage.getItem('wednesday') || 25) + ' lbs'],
+                ['Thursday', parseInt(localStorage.getItem('thursday') || 70), 'Thursday: ' + (localStorage.getItem('thursday') || 70) + ' lbs'],
+                ['Friday', parseInt(localStorage.getItem('friday') || 30), 'Friday: ' + (localStorage.getItem('friday') || 30) + ' lbs'],
+                ['Saturday', parseInt(localStorage.getItem('saturday') || 170), 'Saturday: ' + (localStorage.getItem('saturday') || 170) + ' lbs']
+            ]);
+
+            const options = {
+                title: 'Food Wastage per Day (lbs)',
+                pieSliceText: 'value',
+                legend: { position: 'bottom' },
+                tooltip: { isHtml: true }
+            };
+
+            const chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <section class="header">
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+    </section>
+</body>
+</html>

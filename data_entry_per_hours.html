@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Food Wastage Data</title>
+    <link rel="stylesheet" href="style_data.css">
+</head>
+<body>
+    <h2>Enter Food Wastage Data</h2>
+    <div class="container">
+        <form id="dataForm">
+            <div>
+                <label for="07:00 AM">07:00 AM:</label>
+                <input type="number" id="07:00 am" name="07:00 am" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="08:00 am">08:00 am:</label>
+                <input type="number" id="08:00 am" name="08:00 am" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="09:00 am">09:00 am:</label>
+                <input type="number" id="09:00 am" name="09:00 am" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="10:00 am">10:00 am:</label>
+                <input type="number" id="10:00 am" name="10:00 am" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="11:00 am">11:00 am:</label>
+                <input type="number" id="11:00 am" name="11:00 am" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="12:00 pm">12:00 pm:</label>
+                <input type="number" id="12:00 pm" name="12:00 pm" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="01:00 pm">01:00 pm:</label>
+                <input type="number" id="01:00 pm" name="01:00 pm" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="02:00 pm">02:00 pm:</label>
+                <input type="number" id="02:00 pm" name="02:00 pm" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="03:00 pm">03:00 pm:</label>
+                <input type="number" id="03:00 pm" name="03:00 pm" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="04:00 pm">04:00 pm:</label>
+                <input type="number" id="04:00 pm" name="04:00 pm" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="05:00 pm">05:00 pm:</label>
+                <input type="number" id="05:00 pm" name="05:00 pm" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="06:00 pm">06:00 pm:</label>
+                <input type="number" id="06:00 pm" name="06:00 pm" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="07:00 pm">07:00 pm:</label>
+                <input type="number" id="07:00 pm" name="07:00 pm" placeholder="Wastage Weight (g)">
+            </div>
+            <div>
+                <label for="08:00 pm">08:00 pm:</label>
+                <input type="number" id="08:00 pm" name="08:00 pm" placeholder="Wastage Weight (g)">
+            </div>
+            
+            
+            <button type="button" onclick="saveData()">Submit</button>
+        </form>
+        <!-- Back Button -->
+        <a href="index.html" class="back-button">Back</a>
+    </div>
+
+    <script>
+        function saveData() {
+            // Loop through each day and store the value in localStorage
+            const days = ["07:00 am", "08:00 am", "09:00 am", "10:00 am", "11:00 am", "12:00 pm", "01:00 pm", "02:00 pm", "03:00 pm", "04:00 pm", "05:00 pm", "06:00 pm", "07:00 pm", "08:00 pm"];
+            days.forEach(day => {
+                const weight = document.getElementById(day).value;
+                if (weight) { // Only save if there is a value
+                    localStorage.setItem(day, weight);
+                }
+            });
+
+            alert("Data saved for the selected Times!");
+        }
+    </script>
+</body>
+</html>

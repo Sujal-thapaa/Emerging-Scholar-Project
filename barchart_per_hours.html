@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly Food Wastage Bar Chart</title>
+    <link rel="stylesheet" href="style1.css">
+
+    <!-- Load the Google Charts library -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Initialize the chart -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            // Retrieve hourly data from localStorage or set defaults
+            const data = google.visualization.arrayToDataTable([
+                ['Time', 'Food Wastage per Hour (g)'],
+                ['07:00 AM', parseInt(localStorage.getItem('07:00 am') || 0)],
+                ['08:00 AM', parseInt(localStorage.getItem('08:00 am') || 0)],
+                ['09:00 AM', parseInt(localStorage.getItem('09:00 am') || 0)],
+                ['10:00 AM', parseInt(localStorage.getItem('10:00 am') || 0)],
+                ['11:00 AM', parseInt(localStorage.getItem('11:00 am') || 0)],
+                ['12:00 PM', parseInt(localStorage.getItem('12:00 pm') || 0)],
+                ['01:00 PM', parseInt(localStorage.getItem('01:00 pm') || 0)],
+                ['02:00 PM', parseInt(localStorage.getItem('02:00 pm') || 0)],
+                ['03:00 PM', parseInt(localStorage.getItem('03:00 pm') || 0)],
+                ['04:00 PM', parseInt(localStorage.getItem('04:00 pm') || 0)],
+                ['05:00 PM', parseInt(localStorage.getItem('05:00 pm') || 0)],
+                ['06:00 PM', parseInt(localStorage.getItem('06:00 pm') || 0)],
+                ['07:00 PM', parseInt(localStorage.getItem('07:00 pm') || 0)],
+                ['08:00 PM', parseInt(localStorage.getItem('08:00 pm') || 0)]
+            ]);
+
+            const options = {
+                title: 'Food Wastage Per Hour',
+                chartArea: {width: '50%'},
+                hAxis: {
+                    title: 'Food Wastage (g)',
+                    minValue: 0
+                },
+                vAxis: {
+                    title: 'Time of Day'
+                }
+            };
+
+            const chart = new google.visualization.BarChart(document.getElementById('barchart'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Hourly Food Wastage Bar Chart</h2>
+    <div id="barchart" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly Food Wastage Bar Chart</title>
+    <link rel="stylesheet" href="style1.css">
+
+    <!-- Load the Google Charts library -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Initialize the chart -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            // Retrieve hourly data from localStorage or set defaults
+            const data = google.visualization.arrayToDataTable([
+                ['Time', 'Food Wastage per Hour (g)'],
+                ['07:00 AM', parseInt(localStorage.getItem('07:00 am') || 0)],
+                ['08:00 AM', parseInt(localStorage.getItem('08:00 am') || 0)],
+                ['09:00 AM', parseInt(localStorage.getItem('09:00 am') || 0)],
+                ['10:00 AM', parseInt(localStorage.getItem('10:00 am') || 0)],
+                ['11:00 AM', parseInt(localStorage.getItem('11:00 am') || 0)],
+                ['12:00 PM', parseInt(localStorage.getItem('12:00 pm') || 0)],
+                ['01:00 PM', parseInt(localStorage.getItem('01:00 pm') || 0)],
+                ['02:00 PM', parseInt(localStorage.getItem('02:00 pm') || 0)],
+                ['03:00 PM', parseInt(localStorage.getItem('03:00 pm') || 0)],
+                ['04:00 PM', parseInt(localStorage.getItem('04:00 pm') || 0)],
+                ['05:00 PM', parseInt(localStorage.getItem('05:00 pm') || 0)],
+                ['06:00 PM', parseInt(localStorage.getItem('06:00 pm') || 0)],
+                ['07:00 PM', parseInt(localStorage.getItem('07:00 pm') || 0)],
+                ['08:00 PM', parseInt(localStorage.getItem('08:00 pm') || 0)]
+            ]);
+
+            const options = {
+                title: 'Food Wastage Per Hour',
+                chartArea: {width: '50%'},
+                hAxis: {
+                    title: 'Food Wastage (g)',
+                    minValue: 0
+                },
+                vAxis: {
+                    title: 'Time of Day'
+                }
+            };
+
+            const chart = new google.visualization.BarChart(document.getElementById('barchart'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Hourly Food Wastage Bar Chart</h2>
+    <div id="barchart" style="width: 900px; height: 500px;"></div>
+</body>
+</html>

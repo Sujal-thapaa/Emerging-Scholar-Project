@@ -1,0 +1,106 @@
+/* Reset and base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f9fc;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header Styling */
+h2 {
+    color: #2b7a78;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+/* Section Styling */
+.display-section, .input-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Display Area Styling */
+.food-display {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.food-card {
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #eaf3f3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.food-card h3 {
+    color: #17252a;
+    margin-bottom: 8px;
+}
+
+.food-card p {
+    margin: 4px 0;
+    color: #555;
+}
+
+/* No Data Message */
+.no-data {
+    color: #555;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Button and Link Styling */
+.add-more-link, .view-menu-link, button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #3aafa9;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-more-link:hover, .view-menu-link:hover, button:hover {
+    background-color: #2b7a78;
+    transform: translateY(-2px);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .food-card p, .no-data {
+        font-size: 0.9em;
+    }
+
+    .add-more-link, .view-menu-link, button {
+        font-size: 0.9em;
+    }
+}
